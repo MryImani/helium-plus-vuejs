@@ -1,0 +1,60 @@
+@mixin display-flex($justify-content) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify-content ;
+}
+
+
+
+@mixin flex($justify-content: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: center;
+}
+
+@mixin font($font-weight: 400, $font-size: 14px, $line-height: 28px, $font-family: 'Kalame_Regular') {
+    font-family: 'Kalame_Regular';
+    font-style: normal;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin sliderZindex($justify-content: center) {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: $justify-content;
+}
+
+@mixin slider_control($justify-content: flex-start) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: $justify-content;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+}
+
+@mixin inpStyle {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 2px 0px #406080;
+    border-radius: 2px;
+    padding: 7px 15px;
+    width: 100%;
+}
+
+@mixin sectionStyle ($width: 100%, $margin: 3.13rem auto) {
+    width: $width;
+    margin: $margin;
+}

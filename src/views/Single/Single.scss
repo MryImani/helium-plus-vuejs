@@ -1,0 +1,490 @@
+@import "../../assets/styles/sass/_variable";
+@import "../../assets/styles/sass/_mixin";
+@import "../../assets/styles/sass/_font-face";
+
+
+
+body {
+    direction: rtl;
+
+    .header {
+        width: 100%;
+        @include display-flex($justify-content: space-around);
+
+        box-shadow: 0 .25rem .5rem $colorHeaderShadow;
+        padding: .687rem 0;
+        position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #fff;
+    opacity: 0.9;
+        .logo {
+            @include display-flex($justify-content : flex-start);
+
+            flex-basis: 20%;
+
+            @media only screen and (max-width: 768px) {
+                flex-basis: 54%;
+
+            }
+
+            &__shape {
+                object-fit: contain;
+                margin-right: .5rem;
+            }
+        }
+
+        figure {
+            @media only screen and (max-width: 768px) {
+                display: inline-table;
+
+            }
+        }
+
+        .search {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .alert {
+            width: 3rem;
+            height: 3rem;
+        }
+
+
+
+        .profile {
+            width: 2.625rem;
+            height: 2.625rem;
+        }
+
+    }
+
+
+
+
+    .title {
+        border-bottom: 1px solid $colorBorder;
+    }
+
+    .title-span {
+        @include font(700, 1.25rem, 2.5rem);
+        border-bottom: .125rem solid $colorBorderTitle;
+        padding: .125rem 0;
+    }
+
+
+
+
+    .content {
+
+        @include display-flex($justify-content: center);
+        flex-direction: column;
+
+        .post {
+            width: 50%;
+            margin-top: 2rem;
+
+            @media only screen and (max-width: 600px) {
+                width: 80%;
+            }
+
+            .author {
+
+                @include display-flex($justify-content : flex-start);
+
+                &__img img {
+                    width: 2.25rem;
+                    height: 2.25rem;
+                    border-radius: 50%;
+                }
+
+                &__info {
+                    margin-right: .75rem;
+
+                    &-name {
+                        font-size: .875rem;
+                        font-family: "Kalame_Regular";
+                        font-weight: 400;
+                        color: $colorAuthorName;
+                        line-height: 1.75rem;
+                        display: block;
+                    }
+
+                    &-date {
+                        display: block;
+                        font-family: "Kalame_SemiBold";
+                        font-size: .687rem;
+                        font-weight: 600;
+                        color: $colorCaption;
+                        line-height: .675rem;
+                        direction: rtl;
+                    }
+                }
+            }
+
+            &__title {
+                font-family: "Kalame_Bold";
+                font-size: 1.937rem;
+                line-height: 3.375rem;
+                font-weight: 700;
+                color: $colorBoldDes;
+            }
+
+            &__details {
+                @include display-flex($justify-content: flex-start);
+                margin-top: 1.125rem;
+                font-family: "Kalame_SemiBold";
+
+                &-time {
+                    font-family: "Kalame_SemiBold";
+                    font-size: .687rem;
+                    line-height: 1.187rem;
+                    font-weight: 600;
+                    color: $colorCaption;
+                    text-align: right;
+                    direction: rtl;
+                    margin-left: .5rem;
+                    padding-left: 1rem;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 3px;
+                        height: 3px;
+                        background-color: $colorCaption;
+                        border-radius: 50%;
+                        transform: translate(-.625rem, .5rem);
+                    }
+                }
+
+                &-tag {
+                    font-family: "Kalame_SemiBold";
+                    font-size: .687rem;
+                    line-height: 1.167rem;
+                    font-weight: 600;
+                    color: $colorBlueTxt;
+                    background-color: $tagBackground;
+                    padding: .125rem .5rem;
+                    border-radius: .25rem;
+                }
+
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #208BEE;
+                opacity: 0.25;
+                overflow: hidden;
+                width: 100%;
+                height: 0;
+                transition: .5s ease;
+            }
+
+            &__img {
+                position: relative;
+
+
+                &-one,
+                &-two {
+                    width: 100%;
+                    margin: 1rem 0 1.5rem;
+                }
+            }
+
+            &__img:hover .overlay {
+                height: 100%;
+
+            }
+
+            &__content {
+                font-family: "Kalame_Regular";
+                font-size: 1rem;
+                line-height: 2rem;
+                font-weight: 400;
+                color: $colorBoldDes;
+            }
+
+            &__item {
+                @include display-flex($justify-content: center);
+                margin-top: 1.125rem;
+
+                &-time {
+                    font-family: "Kalame_SemiBold";
+                    font-size: .687rem;
+                    line-height: 1.187rem;
+                    font-weight: 600;
+                    color: $colorCaption;
+                    text-align: right;
+                    direction: rtl;
+                    margin-left: .5rem;
+                    padding-left: 1rem;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 3px;
+                        height: 3px;
+                        background-color: $colorCaption;
+                        border-radius: 50%;
+                        transform: translate(-.625rem, .5rem);
+                    }
+                }
+
+                &-tag {
+                    font-family: "Kalame_SemiBold";
+                    font-size: .687rem;
+                    line-height: 1.168rem;
+                    font-weight: 600;
+                    color: $colorBlueTxt;
+                    background-color: $tagBackground;
+                    padding: .125rem .5rem;
+                    border-radius: .25rem;
+                }
+
+            }
+
+            font-family: "Kalame_Bold";
+
+            .text-bold {
+                color: $colorBoldDes;
+                font-size: 1.25rem;
+                line-height: 2.5rem;
+                font-weight: 700;
+                margin: 2rem 0 1rem 0;
+            }
+
+            font-family: "Kalame_Regular";
+
+        }
+
+        .section__card {
+            width: 80%;
+            margin-top: 5rem;
+
+            .img {
+                position: relative;
+
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: #208BEE;
+                opacity: 0.25;
+                overflow: hidden;
+                width: 100%;
+                height: 0;
+                transition: .5s ease;
+            }
+
+            .img:hover .overlay {
+                height: 100%;
+
+            }
+        }
+
+        .section__comment {
+            @include sectionStyle(42%);
+            width: 50%;
+
+            @media only screen and (max-width: 600px) {
+                width: 80%;
+
+            }
+
+            h3 {
+                color: $colorBoldDes;
+            }
+
+            .comments {
+                color: $colorDes;
+                margin: .625rem 0;
+
+                p {
+                    margin: .312rem 0;
+                }
+
+                input,textarea {
+                    @include inpStyle;
+                    @include font(400, 1rem, 2rem, 'Kalame_Regular');
+
+                    @media only screen and (max-width: 600px) {
+                        width: 100%;
+
+                    }
+                }
+
+                input:focus,textarea:focus {
+                    outline: none;
+                    background-color: #ececec;
+                    box-shadow: 0 .187rem 0 $colorBlueTxt;
+
+                }
+
+                &__item {
+                    border-bottom: 1px solid $colorBorder;
+                }
+
+                &__insert {
+                    margin: 1.5rem 0;
+                }
+
+                &__writer {
+                    display: flex;
+                    align-items: baseline;
+                    margin: .5rem 0;
+                }
+
+                &__writer--name {
+                    @include font(700, 1rem, 1.678rem, 'Kalame_Bold');
+                    flex: 1;
+                    color: $colorBoldDes;
+                }
+
+                &__writer--date {
+                    @include font(600, .678rem, 1.187rem, 'Kalame_SemiBold');
+                    color: $colorDate;
+                }
+
+                &__description {
+                    @include font(400, 1rem, 2rem, 'Kalame_Regular');
+                    color: $colorBoldDes;
+                    margin: 0 0 1rem;
+                }
+
+                &__input {
+                    @include flex($justify-content: space-between);
+                    margin: 1rem 0;
+
+                    @media only screen and (max-width: 600px) {
+
+                        flex-direction: column;
+
+                    }
+
+                    &--email {
+                        width: 50%;
+
+                        @media only screen and (max-width: 600px) {
+                            width: 100%;
+                            margin: .312rem 0;
+                        }
+                    }
+
+                    &--name {
+                        width: 20%;
+
+                        @media only screen and (max-width: 600px) {
+                            width: 100%;
+                            margin: .312rem 0rem;
+                        }
+                    }
+
+                    &--family {
+                        width: 20%;
+
+                        @media only screen and (max-width: 600px) {
+                            width: 100%;
+                            margin: .312rem 0rem;
+
+                        }
+                    }
+
+                }
+
+                &__button {
+                    @include flex($justify-content: end);
+                    margin: 2.5rem 0;
+
+                    button {
+                        @include font(700, 1.125rem, 1.5rem, 'Kalame_Bold');
+                        background: $colorBlueTxt;
+                        border-radius: .25rem;
+                        padding: .437rem 1.25rem;
+                        color: $colorWhite;
+                        outline: none;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .author__cards {
+            @include flex($justify-content: space-between);
+            margin: 1.875rem 0 0;
+
+            .card {
+                flex: 0 1 20%;
+
+                &__img {
+                    margin: .5rem 0 .375rem;
+                }
+
+                p {
+                    margin: 0;
+                }
+
+                .authors__detail--name {
+                    color: $colorAuthorName;
+                }
+
+                &__boldDescription {
+                    @include font(600, 1.125rem, 2.25rem, 'Kalame_SemiBold');
+                    color: $colorBoldDes;
+                    margin: .375rem 0;
+                }
+
+                &__Description {
+                    @include font(400, 1rem, 2rem, 'Kalame_Regular');
+                    color: $colorDes;
+                    margin: .375rem 0;
+                }
+
+                &__read {
+                    span {
+                        @include font(600, .687rem, 1.187rem, 'Kalame_SemiBold');
+                        color: $colorDate;
+                        position: relative;
+                        margin: .375rem 0px;
+                    }
+
+                    i::after {
+                        content: "";
+                        width: 3px;
+                        height: 3px;
+                        background-color: $colorDate;
+                        position: absolute;
+                        top: .5rem;
+                        left: -.5rem;
+                        border-radius: 100%
+                    }
+
+                    button {
+                        @include font(600, .687rem, 1.187rem, 'Kalame_SemiBold');
+                        color: $colorBlueTxt;
+                        background-color: $tagBackground;
+                        border-radius: .25rem;
+                        border: none;
+                        margin: 01rem;
+                        padding: .187rem .5rem;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+
+
+
+    }
+
+
+
+}

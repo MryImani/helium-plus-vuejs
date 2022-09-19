@@ -1,0 +1,385 @@
+@import "../../assets/styles/sass/_variable";
+@import "../../assets/styles/sass/_mixin";
+@import "../../assets/styles/sass/_font-face";
+
+
+
+body {
+    direction: rtl;
+
+    .header {
+        width: 100%;
+        @include display-flex($justify-content: space-around);
+
+        box-shadow: 0 .25rem .5rem $colorHeaderShadow;
+        padding: .687rem 0;
+        position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #fff;
+    opacity: 0.9;
+        .logo {
+            @include display-flex($justify-content : flex-start);
+
+            flex-basis: 20%;
+
+            @media only screen and (max-width: 768px) {
+                flex-basis: 54%;
+
+            }
+
+            &__shape {
+                object-fit: contain;
+                margin-right: .5rem;
+            }
+        }
+
+        figure {
+            @media only screen and (max-width: 768px) {
+                display: inline-table;
+
+            }
+        }
+
+        .search {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .alert {
+            width: 3rem;
+            height: 3rem;
+        }
+
+
+
+        .profile {
+            width: 2.625rem;
+            height: 2.625rem;
+        }
+
+    }
+.modal.tag .modal__close{
+    color: #000;
+    left: 30px;
+    top: 30px;
+}
+.modal.tag .modal__body{
+    color: #000;
+    margin: 89px 30px 0px;
+}
+.frame {
+    direction: rtl;
+    position: relative;
+
+    .container {
+        width: 50%;
+        margin: auto;
+        position: relative;
+
+        @media screen and (max-width: 600px) {
+            width: 90%;
+
+        }
+
+        .add-article {
+
+
+            display: flex;
+            align-items: center;
+            margin: 60px 0px 40px 0px;
+
+
+            &__icon {
+                width: 24px;
+                height: 24px;
+                margin-left: 10px;
+            }
+
+            &__text {
+                font-family: "Kalame_Bold";
+                font-size: 20px;
+                line-height: 40px;
+                color: $colorBoldDes ;
+            }
+
+
+        }
+
+        .article-img {
+            width: 100%;
+            height: 496px;
+            position: relative;
+            margin-bottom: 20px;
+            background-color: #EDF0F2;
+
+            @media screen and (max-width: 600px) {
+                height: 218px;
+            }
+
+            .change-style-icon {
+                position: absolute;
+                margin: 0px 20px;
+                top: 45%;
+                left: 52%;
+                cursor: pointer;
+
+                @media screen and (max-width: 600px) {
+                    width: 30px;
+                    height: 30px;
+
+                }
+
+
+            }
+
+            .add-pic-icon {
+                position: absolute;
+                top: 45%;
+                left: 42%;
+                cursor: pointer;
+
+                @media screen and (max-width: 600px) {
+                    width: 30px;
+                    height: 30px;
+
+                }
+            }
+
+            &__patern {
+                width: 70%;
+                position: absolute;
+                top: 20%;
+                left: 15%;
+            }
+
+            &-input {
+                width: .1;
+                height: .1;
+                opacity: 0;
+            }
+
+        }
+
+        .img-back {
+            width: 100%;
+            position: absolute;
+        }
+
+        &__img__patern {
+            width: 70%;
+            position: absolute;
+            top: 20%;
+            left: 15%;
+        }
+
+
+        .contents {
+            display: flex;
+            flex-direction: column;
+
+            .insert-title {
+                font-size: 18px;
+                line-height: 36px;
+                font-family: "Kalame_SemiBold";
+                color: $colorBoldDes;
+                margin: 28px 0px 16px 0px;
+            }
+
+            .insert-titleinput {
+                width: 100%;
+                height: 36px;
+                border-radius: 5px;
+                border: 0px;
+                background-color: rgb(241, 238, 238);
+                outline: none;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: start;
+                align-items: right;
+
+                &::placeholder {
+                    padding-right: 10px;
+                }
+
+            }
+
+            .tag-input-container {
+                display: flex;
+                align-items: center;
+
+                .tag {
+                    background-color: $tagBackground;
+                    color: $colorBlueTxt;
+                    font-size: 11px;
+                    line-height: 19px;
+                    font-family: "kalame_regular";
+                    padding: 2px 8px;
+                    border-radius: 4px;
+
+                    margin-left: 5px;
+                }
+
+                .taginput {
+                    border: 0px;
+                    outline: 0px;
+                    width: 20px;
+                    height: 50px;
+                    // background-color: yellow;
+                }
+            }
+
+
+
+            .insert-caption {
+                font-size: 16px;
+                line-height: 32px;
+                font-family: "Kalame_Regular";
+                color: $colorDes;
+                margin: 28px 0px 16px 0px;
+                text-align: justify;
+
+            }
+
+            .insert-captioninput {
+                width: 100%;
+                height: 100px;
+                border-radius: 5px;
+                border: 0px;
+                background-color: rgb(241, 238, 238);
+                outline: none;
+                margin-bottom: 20px;
+
+            }
+
+            &__fig {
+                margin-right: 0px;
+
+                &--icon {
+                    width: 42px;
+                    height: 42px;
+                    cursor: pointer;
+                    margin-right: 0px;
+
+                    @media screen and (max-width: 600px) {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+
+        .send-article {
+            color: #fff;
+            width: 164px;
+            height: 46px;
+            background-color: rgb(32, 138, 238);
+            border: none;
+            border-radius: 4px;
+            margin: 60px auto;
+            font-size: 14px;
+            line-height: 24px;
+            font-family: "Kalame_Bold";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+        }
+
+
+    }
+
+    .background {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-color: #0020324D;
+        z-index: 20;
+        position: absolute;
+        opacity: .3;
+    }
+
+
+}
+
+.modul {
+    direction: rtl;
+    width: 30%;
+    height: auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 29px;
+    background-color: #fff;
+    position: fixed;
+    top: 20%;
+    left: 35%;
+    z-index: 20;
+
+    @media screen and (max-width: 600px) {
+        width: 70%;
+        margin: auto;
+        left: 10%;
+
+    }
+
+    &__cancel {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 37px;
+    }
+
+    &__title {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 2px;
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    &__select {
+        width: 100%;
+        height: 46px;
+        border: none;
+        box-shadow: 0px 2px 0px #406080;
+        border-radius: 2px;
+        padding: 7px 16px;
+        outline: none;
+        margin-bottom: 31px;
+        font-family: "Kalame_regular";
+        color: #8593A6;
+        font-size: 16px;
+        line-height: 32px;
+
+
+    }
+
+
+    &__btn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        &-send {
+            width: 167px;
+            height: 46px;
+            color: #fff;
+            border-radius: 4px;
+            background-color: $colorBlueTxt;
+            outline: none;
+            border: none;
+            font-family: "Kalame_Bold";
+            font-size: 14px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+    }
+
+
+
+}
+}

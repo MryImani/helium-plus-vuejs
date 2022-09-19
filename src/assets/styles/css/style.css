@@ -1,0 +1,2013 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Kalame_Bold";
+  font-weight: 700;
+  src: url(@/assets/fonts/Kalameh-Bold.ttf);
+}
+@font-face {
+  font-family: "Kalame_SemiBold";
+  font-weight: 600;
+  src: url(@/assets/fonts/Kalameh-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  src: url(@/assets/fonts/Kalameh-Regular.ttf);
+}
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  direction: rtl;
+  margin: 0px;
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+}
+body .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(250, 250, 250, 0.85);
+  box-shadow: 0 0.25rem 0.5rem rgba(19, 29, 38, 0.05);
+  backdrop-filter: blur(50px);
+}
+body .header__item {
+  flex: 1 0 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+body .header__logo {
+  flex-basis: 70%;
+}
+body .header__search {
+  cursor: pointer;
+}
+body .header__login {
+  margin: 0 0.5rem;
+  outline: none;
+  border: 1px solid rgba(36, 52, 71, 0.15);
+  border-radius: 0.25rem;
+  color: #208BEE;
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 28px;
+  background-color: transparent;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+body .header__login a {
+  text-decoration: none;
+  color: #208BEE;
+}
+@media screen and (max-width: 1200px) {
+  body .header__login {
+    padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .header__login {
+    font-size: 0.562rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  body .header__login {
+    font-size: 0.375rem;
+  }
+}
+body .content .authors {
+  display: flex;
+}
+body .content .authors__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .content .authors__img img {
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 100%;
+}
+@media screen and (max-width: 556px) {
+  body .content .authors__img img {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+}
+body .content .authors__detail {
+  flex: 1 0 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 0.75rem;
+}
+body .content .authors__detail--name {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75rem;
+  color: #fff;
+}
+@media screen and (max-width: 556px) {
+  body .content .authors__detail--name {
+    line-height: 0.75rem;
+  }
+}
+body .content .authors__detail--date {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 19px;
+  color: #CCCCCC;
+}
+body .content .slider {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+body .content .slider__indicators {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+body .content .slider__indicators li {
+  position: relative;
+  flex: 0 1 auto;
+  width: 0.625rem;
+  height: 0.625rem;
+  text-indent: -62.437rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 100%;
+  margin: 0 0.375rem;
+}
+@media screen and (max-width: 764px) {
+  body .content .slider__indicators li {
+    width: 0.312rem;
+    height: 0.312rem;
+  }
+}
+body .content .slider__indicators .active {
+  background-color: #fff;
+}
+body .content .slider__inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+body .content .slider__inner :first-child {
+  display: block;
+}
+body .content .slider__item {
+  display: none;
+}
+body .content .slider__img {
+  width: 100%;
+}
+body .content .slider-control-prev {
+  left: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: end;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+}
+@media screen and (max-width: 764px) {
+  body .content .slider-control-prev img {
+    width: 28%;
+  }
+}
+body .content .slider__note {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  width: 44%;
+  height: 34%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0.25rem 0.625rem 2.187rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(50px);
+  flex-direction: column;
+  border-radius: 0.75rem;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1700px) {
+  body .content .slider__note {
+    width: 48%;
+    height: 37%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  body .content .slider__note {
+    width: 54%;
+    height: 50%;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body .content .slider__note {
+    width: 72%;
+    height: 70%;
+    padding: 1.25rem;
+  }
+}
+@media screen and (max-width: 764px) {
+  body .content .slider__note {
+    width: 88%;
+    height: 80%;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 556px) {
+  body .content .slider__note {
+    width: 88%;
+    height: 80%;
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+body .content .slider__note p {
+  margin: 0px;
+}
+@media screen and (max-width: 900px) {
+  body .content .slider__note p {
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 600px) {
+  body .content .slider__note p {
+    font-size: 60%;
+    line-height: 0.75rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  body .content .slider__note p {
+    font-size: 39%;
+    line-height: 0.5rem;
+  }
+}
+body .content .slider__note--boldDescription {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+  color: #fff;
+}
+@media screen and (max-width: 600px) {
+  body .content .slider__note--boldDescription {
+    line-height: 0.5rem;
+    font-size: small;
+  }
+}
+body .content .slider__note--Description {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #CCCCCC;
+}
+@media screen and (max-width: 600px) {
+  body .content .slider__note--Description {
+    line-height: 1rem;
+  }
+}
+body .content .slider__note--read span {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  color: #CCCCCC;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  body .content .slider__note--read span {
+    line-height: 0;
+    font-size: 0.437rem;
+  }
+}
+body .content .slider__note--read i::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #CCCCCC;
+  position: absolute;
+  top: 0.5rem;
+  left: -0.5rem;
+  border-radius: 100%;
+}
+body .content .slider__note--read button {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  border-radius: 0.25rem;
+  border: none;
+  margin: 0rem 1.125rem;
+  padding: 0.125rem 0.5rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  body .content .slider__note--read button {
+    font-size: 6px;
+    line-height: 0;
+    padding: 6px;
+  }
+}
+body .content .slider-control-next {
+  right: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: flex-start;
+  width: 15%;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+}
+@media screen and (max-width: 764px) {
+  body .content .slider-control-next img {
+    width: 28%;
+  }
+}
+body .content .card-news {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  body .content .card-news {
+    flex-direction: column;
+  }
+}
+body .content .card-news__item {
+  margin: 1.5rem;
+  width: 25%;
+  text-decoration: none;
+  position: relative;
+}
+body .content .card-news__item .overlay {
+  position: absolute;
+  margin-bottom: 195px;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  transition: 0.5s ease;
+  border-radius: 0.25rem;
+}
+body .content .card-news__item:hover .overlay {
+  height: 50%;
+}
+@media only screen and (max-width: 600px) {
+  body .content .card-news__item {
+    width: 80%;
+  }
+}
+body .content .card-news__item .author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+body .content .card-news__item .author__img img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+body .content .card-news__item .author__info {
+  margin-right: 0.75rem;
+}
+body .content .card-news__item .author__info-name {
+  font-family: "Kalame_Regular";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: #28394F;
+  display: block;
+}
+body .content .card-news__item .author__info-date {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  font-weight: 600;
+  color: #8593A6;
+  line-height: 1.187rem;
+  direction: rtl;
+  display: block;
+}
+body .content .card-news__item__img {
+  position: relative;
+}
+@media screen and (max-width: 870px) {
+  body .content .card-news__item__img {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+body .content .card-news__item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  transition: 0.5s ease;
+  border-radius: 0.25rem;
+}
+body .content .card-news__item__img:hover .overlay {
+  height: 100%;
+}
+body .content .card-news__item__img img {
+  width: 100%;
+  height: 15.437rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+body .content .card-news__item-title {
+  font-family: "Kalame_SemiBold";
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  color: #243447;
+  margin-top: 0.75rem;
+}
+body .content .card-news__item-caption {
+  font-family: "Kalame_Regular";
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  margin-top: 0.375rem;
+  color: #445161;
+}
+body .content .card-news__item .details {
+  display: flex;
+  margin-top: 1.125rem;
+  align-items: center;
+}
+body .content .card-news__item .details__time {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  font-weight: 600;
+  color: #8593A6;
+  text-align: right;
+  direction: rtl;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+body .content .card-news__item .details__time::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #8593A6;
+  border-radius: 50%;
+  transform: translate(-0.625rem, 0.5rem);
+}
+body .content .card-news__item .details__tag {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.168rem;
+  font-weight: 600;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body .content .card-article {
+  margin: 4.75rem 0 2.625rem 0;
+}
+@media screen and (max-width: 1100px) {
+  body .content .card-article {
+    margin: 10% 2%;
+  }
+}
+body .content .card-article .card-item {
+  margin: 1.125rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+}
+@media screen and (max-width: 764px) {
+  body .content .card-article .card-item {
+    flex-direction: column;
+  }
+}
+body .content .card-article .card-item .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  transition: 0.5s ease;
+  border-radius: 0.25rem;
+}
+body .content .card-article .card-item:hover .overlay {
+  height: 100%;
+}
+body .content .card-article .card-item__img {
+  position: relative;
+  border-radius: 0.25rem;
+}
+@media screen and (max-width: 870px) {
+  body .content .card-article .card-item__img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+body .content .card-article .card-item .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0px;
+  transition: 0.5s ease;
+  border-radius: 0.25rem;
+}
+body .content .card-article .card-item__img:hover .overlay {
+  height: 100%;
+  margin-top: 12px;
+}
+body .content .card-article .card-item__img img {
+  width: 586px;
+  height: 387;
+  object-fit: cover;
+}
+@media screen and (max-width: 870px) {
+  body .content .card-article .card-item__img img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  body .content .card-article .card-item__img img {
+    width: 100%;
+    height: 15.437rem;
+  }
+}
+body .content .card-article .card-item__content {
+  flex-basis: 40%;
+  margin-right: 1.5rem;
+}
+@media screen and (max-width: 764px) {
+  body .content .card-article .card-item__content {
+    width: 80%;
+    margin-right: 0;
+  }
+}
+body .content .card-article .card-item__content .author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 870px) {
+  body .content .card-article .card-item__content .author {
+    margin-top: 0.5rem;
+  }
+}
+body .content .card-article .card-item__content .author__img img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+body .content .card-article .card-item__content .author__info {
+  margin-right: 0.75rem;
+}
+body .content .card-article .card-item__content .author__info-name {
+  font-family: "Kalame_Regular";
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: #28394F;
+  display: block;
+}
+body .content .card-article .card-item__content .author__info-date {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  font-weight: 600;
+  color: #8593A6;
+  line-height: 1.187;
+  direction: rtl;
+  display: block;
+}
+body .content .card-article .card-item__content .img img {
+  width: 23.375rem;
+  height: 15.437rem;
+  object-fit: cover;
+  margin: 0.5rem 0 0.75rem 0;
+}
+body .content .card-article .card-item__content-title {
+  font-family: "Kalame_Bold";
+  font-size: 1.125rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: #243447;
+  text-align: right;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 1050px) {
+  body .content .card-article .card-item__content-title {
+    font-size: 1.125rem;
+    margin-top: 0;
+  }
+}
+body .content .card-article .card-item__content-caption {
+  font-family: "Kalame_Regular";
+  flex-basis: 40%;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  text-align: right;
+  color: #28394F;
+}
+@media screen and (max-width: 1050px) {
+  body .content .card-article .card-item__content-caption {
+    font-size: 0.875rem;
+  }
+}
+body .content .card-article .card-item__content .details {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+body .content .card-article .card-item__content .details__time {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  font-weight: 600;
+  color: #8593A6;
+  text-align: right;
+  direction: rtl;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+body .content .card-article .card-item__content .details__time::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #8593A6;
+  border-radius: 50%;
+  transform: translate(-0.625rem, 0.5rem);
+}
+body .content .card-article .card-item__content .details__tag {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.168rem;
+  font-weight: 600;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body .footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .footer__background {
+  height: 8.187rem;
+  width: 100%;
+  text-align: left;
+  background-color: #232F3D;
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+@media only screen and (max-width: 600px) {
+  body .footer__background {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body .footer__background {
+    display: none;
+  }
+}
+body .footer .footer-content {
+  position: absolute;
+  top: 0;
+  height: 8.187rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  background: linear-gradient(270deg, #232F3D 42.4%, rgba(35, 47, 61, 0) 100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  z-index: 10;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  body .footer .footer-content {
+    flex-direction: column;
+    background: #232F3D;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body .footer .footer-content {
+    height: auto;
+    background-color: #232F3D;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  body .footer .footer-content {
+    margin: 0;
+  }
+}
+body .footer .footer-content .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 10%;
+}
+@media only screen and (max-width: 600px) {
+  body .footer .footer-content .logo {
+    flex-direction: column;
+    margin: 1.25rem 0px;
+  }
+}
+body .footer .footer-content .logo__shape {
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+body .footer .footer-content .logo__text {
+  width: 3.375rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+body .footer .footer-content__introduction {
+  font-family: "Kalame_Regular";
+  flex-basis: 30%;
+  font-size: 0.875rem;
+  font-weight: 400;
+  flex-basis: 40%;
+  margin-right: 2.5rem;
+  padding: 1.25rem 0;
+}
+@media only screen and (max-width: 600px) {
+  body .footer .footer-content__introduction {
+    margin: 0.625rem 1.25rem;
+  }
+}
+body .footer .footer-content__list {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  flex-basis: 40%;
+}
+@media only screen and (max-width: 800px) {
+  body .footer .footer-content__list {
+    flex-direction: column;
+  }
+}
+body .footer .footer-content__list li {
+  font-family: "Kalame_Regular";
+  flex-basis: 20%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+body .footer .footer-content__list li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #fff;
+}
+@media only screen and (max-width: 1300px) {
+  body .footer .footer-content__list li {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body .footer .footer-content__list li {
+    flex-basis: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .footer .footer-content__list li {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+  }
+}
+
+@font-face {
+  font-family: "Kalame_Bold";
+  font-weight: 700;
+  src: url(@/assets/fonts/Kalameh-Bold.ttf);
+}
+@font-face {
+  font-family: "Kalame_SemiBold";
+  font-weight: 600;
+  src: url(@/assets/fonts/Kalameh-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  src: url(@/assets/fonts/Kalameh-Regular.ttf);
+}
+body .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(19, 29, 38, 0.05);
+  padding: 0.687rem 0;
+}
+body .header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 70%;
+}
+@media only screen and (max-width: 768px) {
+  body .header .logo {
+    flex-basis: 54%;
+  }
+}
+body .header .logo__shape {
+  object-fit: contain;
+  margin-right: 0.5rem;
+}
+@media only screen and (max-width: 768px) {
+  body .header figure {
+    display: inline-table;
+  }
+}
+body .header .search {
+  width: 3rem;
+  height: 3rem;
+}
+body .header .alert {
+  width: 3rem;
+  height: 3rem;
+}
+body .header .profile {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+body .title {
+  border-bottom: 1px solid rgba(19, 158, 202, 0.3);
+}
+body .title-span {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  border-bottom: 0.125rem solid rgba(32, 139, 238, 0.8);
+  padding: 0.125rem 0;
+}
+body .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .content .post {
+  width: 50%;
+  margin-top: 2rem;
+  font-family: "Kalame_Bold";
+  font-family: "Kalame_Regular";
+}
+@media only screen and (max-width: 600px) {
+  body .content .post {
+    width: 80%;
+  }
+}
+body .content .post .author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+body .content .post .author__img img {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+body .content .post .author__info {
+  margin-right: 0.75rem;
+}
+body .content .post .author__info-name {
+  font-size: 0.875rem;
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  color: #28394F;
+  line-height: 1.75rem;
+  display: block;
+}
+body .content .post .author__info-date {
+  display: block;
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  font-weight: 600;
+  color: #8593A6;
+  line-height: 0.675rem;
+  direction: rtl;
+}
+body .content .post__title {
+  font-family: "Kalame_Bold";
+  font-size: 1.937rem;
+  line-height: 3.375rem;
+  font-weight: 700;
+  color: #243447;
+}
+body .content .post__details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.125rem;
+  font-family: "Kalame_SemiBold";
+}
+body .content .post__details-time {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  font-weight: 600;
+  color: #8593A6;
+  text-align: right;
+  direction: rtl;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+body .content .post__details-time::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #8593A6;
+  border-radius: 50%;
+  transform: translate(-0.625rem, 0.5rem);
+}
+body .content .post__details-tag {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.167rem;
+  font-weight: 600;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body .content .post .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+body .content .post__img {
+  position: relative;
+}
+body .content .post__img-one, body .content .post__img-two {
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+}
+body .content .post__img:hover .overlay {
+  height: 100%;
+}
+body .content .post__content {
+  font-family: "Kalame_Regular";
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 400;
+  color: #243447;
+}
+body .content .post__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.125rem;
+}
+body .content .post__item-time {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  font-weight: 600;
+  color: #8593A6;
+  text-align: right;
+  direction: rtl;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+}
+body .content .post__item-time::after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #8593A6;
+  border-radius: 50%;
+  transform: translate(-0.625rem, 0.5rem);
+}
+body .content .post__item-tag {
+  font-family: "Kalame_SemiBold";
+  font-size: 0.687rem;
+  line-height: 1.168rem;
+  font-weight: 600;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body .content .post .text-bold {
+  color: #243447;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+}
+body .content .section__card {
+  width: 80%;
+  margin-top: 5rem;
+}
+body .content .section__card .img {
+  position: relative;
+}
+body .content .section__card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #208BEE;
+  opacity: 0.25;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+body .content .section__card .img:hover .overlay {
+  height: 100%;
+}
+body .content .section__comment {
+  width: 42%;
+  margin: 3.13rem auto;
+  width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment {
+    width: 80%;
+  }
+}
+body .content .section__comment h3 {
+  color: #243447;
+}
+body .content .section__comment .comments {
+  color: #445161;
+  margin: 0.625rem 0;
+}
+body .content .section__comment .comments p {
+  margin: 0.312rem 0;
+}
+body .content .section__comment .comments input {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 2px 0px #406080;
+  border-radius: 2px;
+  padding: 7px 15px;
+  width: 100%;
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment .comments input {
+    width: 100%;
+  }
+}
+body .content .section__comment .comments input:focus {
+  outline: none;
+  background-color: #ececec;
+  box-shadow: 0 0.187rem 0 #208BEE;
+}
+body .content .section__comment .comments__item {
+  border-bottom: 1px solid rgba(19, 158, 202, 0.3);
+}
+body .content .section__comment .comments__insert {
+  margin: 1.5rem 0;
+}
+body .content .section__comment .comments__writer {
+  display: flex;
+  align-items: baseline;
+  margin: 0.5rem 0;
+}
+body .content .section__comment .comments__writer--name {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.678rem;
+  flex: 1;
+  color: #243447;
+}
+body .content .section__comment .comments__writer--date {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.678rem;
+  line-height: 1.187rem;
+  color: #CCCCCC;
+}
+body .content .section__comment .comments__description {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #243447;
+  margin: 0 0 1rem;
+}
+body .content .section__comment .comments__input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment .comments__input {
+    flex-direction: column;
+  }
+}
+body .content .section__comment .comments__input--email {
+  width: 50%;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment .comments__input--email {
+    width: 100%;
+    margin: 0.312rem 0;
+  }
+}
+body .content .section__comment .comments__input--name {
+  width: 20%;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment .comments__input--name {
+    width: 100%;
+    margin: 0.312rem 0rem;
+  }
+}
+body .content .section__comment .comments__input--family {
+  width: 20%;
+}
+@media only screen and (max-width: 600px) {
+  body .content .section__comment .comments__input--family {
+    width: 100%;
+    margin: 0.312rem 0rem;
+  }
+}
+body .content .section__comment .comments__button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+body .content .section__comment .comments__button button {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  background: #208BEE;
+  border-radius: 0.25rem;
+  padding: 0.437rem 1.25rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+body .content .author__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.875rem 0 0;
+}
+body .content .author__cards .card {
+  flex: 0 1 20%;
+}
+body .content .author__cards .card__img {
+  margin: 0.5rem 0 0.375rem;
+}
+body .content .author__cards .card p {
+  margin: 0;
+}
+body .content .author__cards .card .authors__detail--name {
+  color: #28394F;
+}
+body .content .author__cards .card__boldDescription {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+  color: #243447;
+  margin: 0.375rem 0;
+}
+body .content .author__cards .card__Description {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #445161;
+  margin: 0.375rem 0;
+}
+body .content .author__cards .card__read span {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  color: #CCCCCC;
+  position: relative;
+  margin: 0.375rem 0px;
+}
+body .content .author__cards .card__read i::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background-color: #CCCCCC;
+  position: absolute;
+  top: 0.5rem;
+  left: -0.5rem;
+  border-radius: 100%;
+}
+body .content .author__cards .card__read button {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  color: #208BEE;
+  background-color: #DEEAF5;
+  border-radius: 0.25rem;
+  border: none;
+  margin: 1rem;
+  padding: 0.187rem 0.5rem;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Kalame_Bold";
+  font-weight: 700;
+  src: url(@/assets/fonts/Kalameh-Bold.ttf);
+}
+@font-face {
+  font-family: "Kalame_SemiBold";
+  font-weight: 600;
+  src: url(@/assets/fonts/Kalameh-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  src: url(@/assets/fonts/Kalameh-Regular.ttf);
+}
+*:focus {
+  outline: none;
+}
+
+body .register {
+  width: 50%;
+  margin: 9.187rem 45.062rem 21.75rem;
+}
+@media only screen and (max-width: 1500px) {
+  body .register {
+    width: 66%;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  body .register {
+    width: 90%;
+    margin: 9.187rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .register {
+    width: 100%;
+    margin: 3.187rem;
+  }
+}
+body .register__done {
+  width: 40%;
+  margin: 0px auto;
+  padding: 3.187rem 3.687rem;
+}
+@media only screen and (max-width: 1500px) {
+  body .register__done {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .register__done {
+    width: 78%;
+    padding: 1.187rem;
+  }
+}
+body .register__done__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .register__done__content img {
+  width: 15.625rem;
+  height: 9.375rem;
+}
+body .register__done__content-description {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #8593A6;
+  text-align: center;
+  margin: 2.125rem 0 1.562rem;
+}
+body .register__done__footer {
+  text-align: center;
+}
+body .register__done__footer-button {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  width: 10.43rem;
+  height: 2.87rem;
+  background: #208BEE;
+  border-radius: 0.25rem;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+body .form {
+  width: 40%;
+  margin: 0px auto;
+  background: #FAFBFC;
+  box-shadow: 0px 8px 16px rgba(32, 48, 64, 0.15);
+  border-radius: 12px;
+  padding: 3.187rem 3.687rem;
+}
+@media only screen and (max-width: 1500px) {
+  body .form {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .form {
+    width: 78%;
+    padding: 1.187rem;
+  }
+}
+body .form__title {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  color: #243447;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  body .form__title {
+    font-size: 1rem;
+  }
+}
+body .form__description {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 2.25rem;
+  color: #8593A6;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  body .form__description {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body .form__description {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+}
+body .form__content {
+  display: flex;
+  flex-direction: column;
+}
+body .form__content__item {
+  margin: 2.25rem 0 0;
+  position: relative;
+}
+body .form__content__item__label {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #243447;
+}
+@media only screen and (max-width: 600px) {
+  body .form__content__item__label {
+    font-size: 0.625rem;
+  }
+}
+body .form__content__item__input {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 2px 0px #406080;
+  border-radius: 2px;
+  padding: 7px 15px;
+  width: 100%;
+  color: #243447;
+}
+@media only screen and (max-width: 400px) {
+  body .form__content__item__input {
+    font-size: 0.8rem;
+  }
+}
+body .form__content__item__span {
+  color: #8593A6;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0.75rem;
+}
+body .form__content__item__file {
+  width: 100%;
+  height: 76px;
+  border-radius: 12px;
+  margin-top: 1.25rem;
+  background: #EDEDED;
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+body .form__content__item__file label {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #208BEE;
+  position: absolute;
+  margin: 1.625rem 1.5rem;
+  cursor: pointer;
+}
+body .form__content__item__file img {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+body .form #inp__phone, body .form #inp__email {
+  text-align: end;
+}
+body .form input:focus {
+  outline: none;
+  background-color: #ececec;
+  box-shadow: 0 0.187rem 0 #208BEE;
+}
+body .form input:focus + .form__content__item__span {
+  opacity: 0;
+}
+body .form input::-webkit-input-placeholder {
+  color: #8593A6;
+}
+body .form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+body .form input:focus::-moz-placeholder {
+  opacity: 0;
+}
+body .form input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+body .form input:focus:-moz-placeholder {
+  opacity: 0;
+}
+body .form input[type=file] {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+body .form__footer {
+  text-align: center;
+}
+body .form__footer__button {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  width: 10.43rem;
+  height: 2.87rem;
+  background: #208BEE;
+  border-radius: 0.25rem;
+  margin: 2.25rem 0 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+@media only screen and (max-width: 600px) {
+  body .form__footer__button {
+    width: 50%;
+    padding: 0px;
+  }
+}
+body .errorValidation {
+  border: none;
+  box-shadow: 0px 2px 0px #E53222;
+  border-radius: 2px;
+  padding: 7px 15px;
+  width: 100%;
+  outline: none;
+  background-color: #ececec;
+}
+body .errorMessage {
+  font-family: "Kalame_Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.687rem;
+  line-height: 1.187rem;
+  color: #E53222;
+}
+
+@font-face {
+  font-family: "Kalame_Bold";
+  font-weight: 700;
+  src: url(@/assets/fonts/Kalameh-Bold.ttf);
+}
+@font-face {
+  font-family: "Kalame_SemiBold";
+  font-weight: 600;
+  src: url(@/assets/fonts/Kalameh-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  src: url(@/assets/fonts/Kalameh-Regular.ttf);
+}
+.frame {
+  position: relative;
+}
+.frame .container {
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+@media screen and (max-width: 600px) {
+  .frame .container {
+    width: 90%;
+  }
+}
+.frame .container .add-article {
+  display: flex;
+  align-items: center;
+  margin: 60px 0px 40px 0px;
+}
+.frame .container .add-article__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+.frame .container .add-article__text {
+  font-family: "Kalame_Bold";
+  font-size: 20px;
+  line-height: 40px;
+  color: #243447;
+}
+.frame .container .article-img {
+  width: 100%;
+  height: 496px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: #EDF0F2;
+}
+@media screen and (max-width: 600px) {
+  .frame .container .article-img {
+    height: 218px;
+  }
+}
+.frame .container .article-img .change-style-icon {
+  position: absolute;
+  margin: 0px 20px;
+  top: 45%;
+  left: 52%;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .frame .container .article-img .change-style-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+.frame .container .article-img .add-pic-icon {
+  position: absolute;
+  top: 45%;
+  left: 42%;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .frame .container .article-img .add-pic-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+.frame .container .article-img__patern {
+  width: 70%;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.frame .container .article-img-input {
+  width: 0.1;
+  height: 0.1;
+  opacity: 0;
+}
+.frame .container .img-back {
+  width: 100%;
+  position: absolute;
+}
+.frame .container__img__patern {
+  width: 70%;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+}
+.frame .container .contents {
+  display: flex;
+  flex-direction: column;
+}
+.frame .container .contents .insert-title {
+  font-size: 18px;
+  line-height: 36px;
+  font-family: "Kalame_SemiBold";
+  color: #243447;
+  margin: 28px 0px 16px 0px;
+}
+.frame .container .contents .insert-caption {
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Kalame_Regular";
+  color: #445161;
+  margin: 28px 0px 16px 0px;
+  text-align: justify;
+}
+.frame .container .contents__icon {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .frame .container .contents__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+.frame .container .send-article {
+  color: #fff;
+  width: 164px;
+  height: 46px;
+  background-color: rgba(32, 139, 238, 0.45);
+  border: none;
+  border-radius: 4px;
+  margin: 60px auto;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Kalame_Bold";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.frame .background {
+  width: 100%;
+  height: 140vh;
+  top: 0;
+  background-color: rgba(0, 32, 50, 0.3019607843);
+  z-index: 20;
+  position: absolute;
+  opacity: 0.3;
+}
+
+.modul {
+  width: 30%;
+  height: auto;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 29px;
+  background-color: #fff;
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  z-index: 20;
+}
+@media screen and (max-width: 600px) {
+  .modul {
+    width: 70%;
+    margin: auto;
+    left: 10%;
+  }
+}
+.modul__cancel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 37px;
+}
+.modul__title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2px;
+  font-size: 16px;
+  line-height: 32px;
+}
+.modul__select {
+  width: 100%;
+  height: 46px;
+  border: none;
+  box-shadow: 0px 2px 0px #406080;
+  border-radius: 2px;
+  padding: 7px 16px;
+  outline: none;
+  margin-bottom: 31px;
+  font-family: "Kalame_regular";
+  color: #8593A6;
+  font-size: 16px;
+  line-height: 32px;
+}
+.modul__btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.modul__btn-send {
+  width: 167px;
+  height: 46px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #208BEE;
+  outline: none;
+  border: none;
+  font-family: "Kalame_Bold";
+  font-size: 14px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Kalame_Bold";
+  font-weight: 700;
+  src: url(@/assets/fonts/Kalameh-Bold.ttf);
+}
+@font-face {
+  font-family: "Kalame_SemiBold";
+  font-weight: 600;
+  src: url(@/assets/fonts/Kalameh-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Kalame_Regular";
+  font-weight: 400;
+  src: url(@/assets/fonts/Kalameh-Regular.ttf);
+}
+body .header .toolbar {
+  display: flex;
+  align-items: center;
+}
+body .header .toolbar .save {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0px 14px;
+}
+body .header .toolbar .search {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0px 14px;
+}
+body .header .toolbar .alert {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0px 14px;
+}
+body .header .toolbar .profile {
+  margin: 0px 14px;
+}
+body .container {
+  width: 50%;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  body .container {
+    width: 90%;
+  }
+}
+body .container .add-article {
+  display: flex;
+  align-items: center;
+  margin: 60px 0px 40px 0px;
+}
+body .container .add-article__icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+body .container .add-article__text {
+  font-family: "Kalame_Bold";
+  font-size: 20px;
+  line-height: 40px;
+  color: #243447;
+}
+body .container .article-img {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 600px) {
+  body .container .article-img {
+    height: 218px;
+  }
+}
+body .container .article-img .change-style-icon {
+  position: absolute;
+  margin: 0px 20px;
+  top: 45%;
+  left: 52%;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  body .container .article-img .change-style-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+body .container .article-img .add-pic-icon {
+  position: absolute;
+  top: 45%;
+  left: 42%;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  body .container .article-img .add-pic-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+body .container .article-img__back {
+  width: 100%;
+  position: absolute;
+}
+body .container .article-img__hover {
+  width: 100%;
+  position: absolute;
+}
+body .container .contents {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 600px) {
+  body .container .contents {
+    text-align: justify;
+  }
+}
+body .container .contents .icons {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  body .container .contents .icons {
+    width: 32px;
+    height: 32px;
+  }
+}
+body .container .contents__title {
+  font-size: 18px;
+  line-height: 36px;
+  font-family: "Kalame_SemiBold";
+  color: #243447;
+  margin: 28px 0px 16px 0px;
+}
+body .container .contents__tag {
+  display: flex;
+  align-items: center;
+}
+body .container .contents__tag-name {
+  background-color: #DEEAF5;
+  color: #208BEE;
+  font-size: 11px;
+  line-height: 19px;
+  font-family: "kalame_regular";
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 16px;
+}
+body .container .contents__caption {
+  font-size: 16px;
+  line-height: 32px;
+  font-family: "Kalame_Regular";
+  color: #445161;
+  margin: 28px 0px 16px 0px;
+  text-align: justify;
+}
+body .container .send-article {
+  color: #fff;
+  width: 164px;
+  height: 46px;
+  background-color: #208BEE;
+  border: none;
+  border-radius: 4px;
+  margin: 60px auto 159px auto;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Kalame_Bold";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

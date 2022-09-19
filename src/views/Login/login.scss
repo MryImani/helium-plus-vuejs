@@ -1,0 +1,268 @@
+@import "../../assets/styles/sass/_variable";
+@import "../../assets/styles/sass/_mixin";
+@import "../../assets/styles/sass/_font-face";
+*:focus{
+    outline: none;
+}
+body{
+    .register{
+        width: 50%;
+        margin: 13.187rem  auto;
+       
+        @media only screen and (max-width: 1500px) {
+            width: 66%;
+
+        }
+        @media only screen and (max-width: 1400px) {
+            width: 90%;
+            margin: 9.187rem;
+
+        }
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            margin: 3.187rem;
+
+        }
+       
+      
+        &__done{
+            width: 40%;
+            margin: 0px auto;
+            padding:3.187rem 3.687rem;
+            @media only screen and (max-width: 1500px) {
+                width: 45%;
+    
+            }
+            @media only screen and (max-width: 600px) {
+                width: 78%;
+                padding: 1.187rem;
+    
+            }
+            
+            &__content{
+               display: flex;
+               flex-direction: column; 
+               align-items: center;
+               img{
+                   width: 15.625rem;
+                   height: 9.375rem;
+               }
+               &-description{
+                @include font(400,1rem , 2rem, 'Kalame_Regular');
+                color:$colorCaption ;
+                text-align: center;
+                margin:2.125rem 0 1.562rem ;
+            }
+            }
+            &__footer{
+                text-align: center;
+                &-button{
+                    @include font(700, 0.875rem, 1.5rem, 'Kalame_Bold');
+                    padding: 0.5rem 1.5rem;
+                    width: 10.43rem;
+                    height: 2.87rem;
+                    background: $colorBlueTxt;
+                    border-radius: 0.25rem;
+                    margin:0;
+                    border: none;
+                    cursor: pointer;
+                    color: $colorWhite;
+                   
+                }
+            }
+            }
+           
+    }
+    .form{
+        width: 40%;
+        margin: 0px auto;
+        background: #FAFBFC;
+        box-shadow: 0px 8px 16px rgba(32, 48, 64, 0.15);
+        border-radius: 12px;
+        padding:3.187rem 3.687rem;
+       
+        @media only screen and (max-width: 1500px) {
+            width: 45%;
+
+        }
+        @media only screen and (max-width: 600px) {
+            width: 78%;
+            padding: 1.187rem;
+
+        }
+     
+        &__title{
+            @include font(700, 1.25rem, 2.5rem, 'Kalame_Bold');
+            color:$colorBoldDes ;
+            text-align: center;
+            @media only screen and (max-width: 600px) {
+                font-size: 1rem;
+    
+            }
+            
+        }
+        &__description{
+            @include font(600,1.125rem , 2.25rem, 'Kalame_SemiBold');
+            color:$colorCaption ;
+            text-align: center;
+            @media only screen and (max-width: 600px) {
+                font-size: 1rem;
+                line-height: 1rem;
+    
+            }
+            @media only screen and (max-width: 400px) {
+                font-size: 0.9rem;
+                line-height: 1rem;
+    
+            }
+          
+        }
+        &__content{
+           display: flex;
+           flex-direction: column; 
+           &__item{
+            margin:2.25rem 0 0; 
+            position: relative;
+            &__label{
+                @include font(400, 1rem, 2rem, 'Kalame_Regular');
+                color:$colorBoldDes ;
+                @media only screen and (max-width: 600px) {
+                    font-size: 0.625rem;
+        
+                }
+
+            }
+            &__input{
+                @include font(400, 1rem, 2rem, 'Kalame_Regular');
+                @include inpStyle;
+               color: $colorBoldDes;
+               @media only screen and (max-width: 400px) {
+                font-size: 0.8rem;
+    
+            }
+           
+        }
+        &__span{
+            color: $colorCaption;
+            position: absolute;
+            right: 1.5rem;
+            bottom: 0.75rem;
+
+        }
+        &__file{
+            width:100%;
+            height: 76px;
+            border-radius: 12px;
+            margin-top: 1.25rem;
+            background: #EDEDED;
+            position: relative;
+            display: flex;
+            justify-content: end;
+           
+           label{
+            @include font(700, 0.875rem, 1.5rem, 'Kalame_Bold');
+            color: $colorBlueTxt;
+            position: absolute;
+            margin: 1.625rem 1.5rem;
+            cursor: pointer;
+           }
+           img{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+           }
+        }
+      
+        }
+      
+      
+        
+           
+            
+        }
+        #inp__phone,#inp__email{
+            text-align: end;
+        }
+        input:focus {
+            outline: none;
+            background-color: #ececec;
+            box-shadow: 0 .187rem 0 $colorBlueTxt;
+           
+
+        }
+        input:focus +.form__content__item__span
+        {
+            opacity: 0;
+        }
+        input::-webkit-input-placeholder {
+            color: $colorCaption;
+        }
+        
+    
+        input:focus::-webkit-input-placeholder {
+            opacity: 0;
+        }
+        
+        input:focus::-moz-placeholder {
+           opacity: 0;
+        }
+         
+        input:focus:-ms-input-placeholder {
+            opacity: 0;
+        }
+         
+        input:focus:-moz-placeholder {
+           opacity: 0;
+        }
+
+        input[type=file]{
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+            top: 30px;
+            left: 0px;
+        }
+     
+        &__footer{
+            text-align: center;
+            &__button{
+                @include font(700, 0.875rem, 1.5rem, 'Kalame_Bold');
+                padding: 0.5rem 1.5rem;
+                width: 10.43rem;
+                height: 2.87rem;
+                background: $colorBlueTxt;
+                border-radius: 0.25rem;
+                margin: 2.25rem 0 0;
+                border: none;
+                cursor: pointer;
+                color: $colorWhite;
+                
+               
+                @media only screen and (max-width: 600px) {
+                    width: 50%;
+                    padding: 0px;
+
+                }
+            }
+           
+        }
+     
+
+    }
+    .errorValidation{
+        border: none;
+        box-shadow: 0px 2px 0px #E53222;
+        border-radius: 2px;
+        padding: 7px 15px;
+        width: 100%; 
+        outline: none;
+        background-color: #ececec;
+    }
+    .errorMessage{
+        @include font(600, 0.687rem, 1.187rem, 'Kalame_SemiBold');
+        color: #E53222;
+    }
+}
